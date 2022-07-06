@@ -41,6 +41,18 @@ const App = () => {
     setNouvelleTache({titre: "", estFait: false});
   };
 
+  // Fonction qui gére la supression d'une tache
+  const handleDelete = (tache) => {
+    // on filtre la tache pour la sortir du tableau
+    const newTaches = taches.filter((elem) => elem !== tache);
+    // et le résultat du filtre est envoyé dans la nouvelle liste de taches
+    setTaches(newTaches);
+  }
+
+  const viderTaches = () => {
+    setTaches([]);
+  }
+
   return (
     <div>
       <h1>Liste de tâches</h1>
@@ -48,7 +60,7 @@ const App = () => {
       <TodoForm tache={nouvelleTache} handleSubmit={handleSubmit} handleChange={handleChange}/>
 
       {/* Affichage de la liste des tâches */}
-      <TodoList taches={taches} />
+      <TodoList taches={taches} handleDelete={handleDelete} viderTaches={viderTaches}/>
     </div>
   );
 }
