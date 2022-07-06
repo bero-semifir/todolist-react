@@ -3,7 +3,7 @@ import './Todo.css';
 
 const Todo = ({tache, handleDelete}) => {
   return (
-    <li>{tache.titre} { tache.estFait ? "✔" : "❌" }<button
+    <li>{tache.title} { tache.completed ? "✔" : "❌" }<button
     className='delete-btn'
     onClick={() => handleDelete(tache)}
     >&times;</button></li>

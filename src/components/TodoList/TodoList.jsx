@@ -7,7 +7,7 @@ import Todo from "../Todo/Todo";
  */
 const TodoList = ({ taches, handleDelete, viderTaches }) => {
   // useState pas necessaire car le composant ne gére pas la valeur "aFaire"
-  let aFaire = taches.filter((tache) => tache.estFait === false);
+  let aFaire = taches.filter((tache) => tache.completed === false);
 
   const genererMessage = () => {
     if (taches.length > 0) {
@@ -30,7 +30,7 @@ const TodoList = ({ taches, handleDelete, viderTaches }) => {
           {taches.map((tache) => {
             return (
               <Todo
-                key={tache.titre}
+                key={tache.id}
                 tache={tache}
                 handleDelete={handleDelete}
               />

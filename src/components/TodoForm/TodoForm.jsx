@@ -5,8 +5,8 @@ const TodoForm = ({tache, handleSubmit, handleChange}) => {
       <input
         type="text"
         id="titre"
-        name="titre"
-        value={tache.titre}
+        name="title"
+        value={tache.title}
         onChange={handleChange} />
       <button type="submit">Ajouter une tâche</button>
     </form>
